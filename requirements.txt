@@ -1,6 +1,6 @@
 langchain==0.1.12
 langchain-community
-openai
+openai==1.11.1
 cohere
 pyarrow
 titoken
