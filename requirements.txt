@@ -2,10 +2,7 @@ langchain==0.1.12
 langchain-community
 openai==1.11.1
 cohere
-pyarrow
-titoken
 datasets==1.15.0
 python-dotenv==0.19.1
 cassio==0.1.5
 PyPDF2==3.0.1
-Pillow==9.0.0
