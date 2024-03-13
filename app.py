@@ -1,8 +1,8 @@
 import streamlit as st
-from langchain.vectorstores.cassandra import Cassandra
+from langchain_community.vectorstores.cassandra import Cassandra
 from langchain.indexes.vectorstore import VectorStoreIndexWrapper
-from langchain.llms import OpenAI
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_community.llms import OpenAI
+from langchain_community.embeddings import OpenAIEmbeddings
 from datasets import load_dataset
 from dotenv import load_dotenv
 import cassio
