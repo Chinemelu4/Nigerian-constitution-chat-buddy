@@ -3,7 +3,8 @@ langchain-community
 openai==1.11.1
 tiktoken
 cohere
+pyarrow==14.0.0
 datasets==1.15.0
-python-dotenv==0.19.1
+python-dotenv==1.0.0
 cassio==0.1.5
 PyPDF2==3.0.1
