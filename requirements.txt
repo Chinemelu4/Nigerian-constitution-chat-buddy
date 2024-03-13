@@ -1,6 +1,7 @@
 langchain==0.1.12
 langchain-community
 openai==1.11.1
+tiktoken
 cohere
 datasets==1.15.0
 python-dotenv==0.19.1
