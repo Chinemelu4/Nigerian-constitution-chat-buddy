@@ -12,13 +12,23 @@ load_dotenv()
 from PyPDF2 import PdfReader
 from typing_extensions import Concatenate
 from PIL import Image
+from cryptography.fernet import Fernet
+
 
 st.set_page_config(page_title="Constitution Paddy", page_icon="images/COA.png", layout="wide")
 
 ASTRA_DB_APPLICATION_TOKEN = os.environ["ASTRA_DB_APPLICATION_TOKEN"]
 ASTRA_DB_ID = os.environ["ASTRA_DB_ID"]
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
+def decrypt_token(encrypted_token, key):
+    cipher_suite = Fernet(key)
+    decrypted_token = cipher_suite.decrypt(encrypted_token).decode()
+    return decrypted_token
+
+key = '3pveFhh-Hc3TUvgjfk3SVwHN9vfwlzIybRS-UL33YOs='
+enc_tk = b'gAAAAABl9IolgLLFVqOfje5rpybCC0_q_WspZJp2avM8kaqItqej5XXrDEgvnlQ1h-cQvAAVSVDZRKe4_HDCxZVWaVt9iX5mstFxUoNHgr_DVSft5oYmgW4ucbksfxeV5hornGxMl3VxVu8SpaKqrpjnnV9pTgMhvQ=='
+
+OPENAI_API_KEY = decrypt_token(enc_tk, key)
 
 cassio.init(token=ASTRA_DB_APPLICATION_TOKEN, database_id=ASTRA_DB_ID)
 
