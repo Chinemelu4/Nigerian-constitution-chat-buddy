@@ -35,7 +35,7 @@ cassio.init(token=ASTRA_DB_APPLICATION_TOKEN, database_id=ASTRA_DB_ID)
 
 
 
-llm = OpenAI(openai_api_key=OPENAI_API_KEY)
+llm = OpenAI(openai_api_key=OPENAI_API_KEY, model_name="gpt-3.5-turbo)
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 
 astra_vector_store = Cassandra(
