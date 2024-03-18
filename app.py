@@ -20,14 +20,7 @@ st.set_page_config(page_title="Constitution Paddy", page_icon="images/COA.png", 
 ASTRA_DB_APPLICATION_TOKEN = st.secrets["ASTRA_DB_APPLICATION_TOKEN"]
 ASTRA_DB_ID = st.secrets["ASTRA_DB_ID"]
 
-def decrypt_token(encrypted_token, key):
-    cipher_suite = Fernet(key)
-    decrypted_token = cipher_suite.decrypt(encrypted_token).decode()
-    return decrypted_token
 
-
-
-enc_tk = b'gAAAAABl9IolgLLFVqOfje5rpybCC0_q_WspZJp2avM8kaqItqej5XXrDEgvnlQ1h-cQvAAVSVDZRKe4_HDCxZVWaVt9iX5mstFxUoNHgr_DVSft5oYmgW4ucbksfxeV5hornGxMl3VxVu8SpaKqrpjnnV9pTgMhvQ=='
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
@@ -35,7 +28,7 @@ cassio.init(token=ASTRA_DB_APPLICATION_TOKEN, database_id=ASTRA_DB_ID)
 
 
 
-llm = OpenAI(openai_api_key=OPENAI_API_KEY, model_name="gpt-3.5-turbo)
+llm = OpenAI(openai_api_key=OPENAI_API_KEY, model_name="gpt-3.5-turbo")
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 
 astra_vector_store = Cassandra(
