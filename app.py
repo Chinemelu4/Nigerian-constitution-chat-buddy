@@ -25,7 +25,8 @@ def decrypt_token(encrypted_token, key):
     decrypted_token = cipher_suite.decrypt(encrypted_token).decode()
     return decrypted_token
 
-key = '3pveFhh-Hc3TUvgjfk3SVwHN9vfwlzIybRS-UL33YOs='
+
+key = st.secrets["key"]
 enc_tk = b'gAAAAABl9IolgLLFVqOfje5rpybCC0_q_WspZJp2avM8kaqItqej5XXrDEgvnlQ1h-cQvAAVSVDZRKe4_HDCxZVWaVt9iX5mstFxUoNHgr_DVSft5oYmgW4ucbksfxeV5hornGxMl3VxVu8SpaKqrpjnnV9pTgMhvQ=='
 
 OPENAI_API_KEY = decrypt_token(enc_tk, key)
