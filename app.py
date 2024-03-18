@@ -29,7 +29,7 @@ def decrypt_token(encrypted_token, key):
 key = st.secrets["key"]
 enc_tk = b'gAAAAABl9IolgLLFVqOfje5rpybCC0_q_WspZJp2avM8kaqItqej5XXrDEgvnlQ1h-cQvAAVSVDZRKe4_HDCxZVWaVt9iX5mstFxUoNHgr_DVSft5oYmgW4ucbksfxeV5hornGxMl3VxVu8SpaKqrpjnnV9pTgMhvQ=='
 
-OPENAI_API_KEY = decrypt_token(enc_tk, key)
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 cassio.init(token=ASTRA_DB_APPLICATION_TOKEN, database_id=ASTRA_DB_ID)
 
