@@ -66,6 +66,12 @@ st.sidebar.markdown('![Visitor count](https://shields-io-visitor-counter.herokua
 question = st.text_input("Ask me any question?")
 question1 = f"Summarize in 200 characters or less, {question}"
 if st.button('Answer'):
-    answer = astra_vector_index.query(question1, llm=llm)
-    st.write(f"Constitution Amebo:\n {answer}")
+    try:
+        answer = astra_vector_index.query(question1, llm=llm)
+        st.write(f"Constitution Amebo:\n {answer}")
+    except Exception as e:
+        st.error("Oops! Looks like we've hit a rate limit error.")
+        st.write("This might be because we've exceeded the rate limit of our chat buddy service.")
+        st.write("Please wait for a moment and try again later. We're constantly working to improve our service.")
+
 
