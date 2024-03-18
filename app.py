@@ -63,7 +63,8 @@ st.sidebar.write("\n\n\n")
 st.sidebar.write("NB: This is a prototype, the chat buddy is still in development phase, so there might be some errors. Please report them to ezinwanneaka@gmail.com")
 st.sidebar.markdown('![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=https://share.streamlit.io/constitution-chat-buddy.streamlit.app/&label=VisitorsCount&labelColor=000000&logo=GitHub&logoColor=FFFFFF&color=1D70B8&style=for-the-badge)')
 question = st.text_input("Ask me any question?")
+question1 = f"Summarize in 200 characters or less, {question}"
 if st.button('Answer'):
-    answer = astra_vector_index.query(question, llm=llm)
+    answer = astra_vector_index.query(question1, llm=llm)
     st.write(f"Constitution Amebo:\n {answer}")
 
