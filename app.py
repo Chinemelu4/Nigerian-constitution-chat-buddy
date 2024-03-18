@@ -17,8 +17,8 @@ from cryptography.fernet import Fernet
 
 st.set_page_config(page_title="Constitution Paddy", page_icon="images/COA.png", layout="wide")
 
-ASTRA_DB_APPLICATION_TOKEN = os.environ["ASTRA_DB_APPLICATION_TOKEN"]
-ASTRA_DB_ID = os.environ["ASTRA_DB_ID"]
+ASTRA_DB_APPLICATION_TOKEN = st.secrets["ASTRA_DB_APPLICATION_TOKEN"]
+ASTRA_DB_ID = st.secrets["ASTRA_DB_ID"]
 
 def decrypt_token(encrypted_token, key):
     cipher_suite = Fernet(key)
